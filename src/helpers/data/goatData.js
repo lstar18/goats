@@ -139,7 +139,7 @@ const goats = [
     isBusy: true,
     beardLength: 'short',
     isFainter: false,
-    url: 'https://tse2.mm.bing.net/th?id=OIP.xffIS1WTAuUUQPkoW-RPMwHaE8&pid=Api&P=0&w=243&h=163',
+    imgUrl: 'https://tse2.mm.bing.net/th?id=OIP.xffIS1WTAuUUQPkoW-RPMwHaE8&pid=Api&P=0&w=243&h=163',
     age: 50,
   },
   {
@@ -223,4 +223,11 @@ const goats = [
 
 const getGoats = () => goats;
 
-export default { getGoats };
+const useGoat = (goatId) => {
+  goats.forEach((response) => {
+    if (response.id === goatId) {
+      response.isBusy = true;
+    }
+  });
+};
+export default { getGoats, useGoat };
